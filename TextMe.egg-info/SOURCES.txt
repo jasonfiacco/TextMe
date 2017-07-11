@@ -1,0 +1,9 @@
+MANIFEST.in
+TextMe/__init__.py
+TextMe/views.py
+TextMe.egg-info/PKG-INFO
+TextMe.egg-info/SOURCES.txt
+TextMe.egg-info/dependency_links.txt
+TextMe.egg-info/not-zip-safe
+TextMe.egg-info/requires.txt
+TextMe.egg-info/top_level.txt
