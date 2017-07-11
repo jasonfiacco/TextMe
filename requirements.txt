@@ -1,9 +1,11 @@
 click==6.7
 Flask==0.12.2
 Flask-SQLAlchemy==2.2
+gunicorn==19.7.1
 itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
 psycopg2==2.7.1
 SQLAlchemy==1.1.11
+-e git+https://github.com/jasonfiacco/TextMe.git@5c46436f3127030f5adab84d51b623ddda72a6a8#egg=TextMe
 Werkzeug==0.12.2
