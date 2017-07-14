@@ -7,7 +7,8 @@ app.config.update(dict(
     SECRET_KEY='development key',
     USERNAME='admin',
     PASSWORD='default',
-    SQLALCHEMY_DATABASE_URI='postgresql://jasonfiacco:Ineriner123@localhost/TextMe'
+    SQLALCHEMY_DATABASE_URI='postgresql://jasonfiacco:Ineriner123@localhost/textme',
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 ))
 app.config.from_envvar('TEXTME_SETTINGS', silent=True)
 
