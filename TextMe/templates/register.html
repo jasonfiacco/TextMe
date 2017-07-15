@@ -1,0 +1,10 @@
+<html>
+{% from "_formhelpers.html" import render_field %}
+<form method="POST" action="/register">
+  {{ form.csrf_token }}
+  {{ form.username.label }} {{ form.username }}
+  {{ form.password.label }} {{ form.password }}
+  {{ form.password_confirm.label}}  {{ form.password_confirm }}
+  <input type="submit" value="Submit">
+</form>
+</html>
