@@ -35,14 +35,17 @@ def register():
             flash('User already exists')
     return render_template('register.html', form=form)
 
-#@app.route('/login', methods=['GET', 'POST'])
-#def login():
-#    """For GET requests, display login form, for POSTS, login the user by processing data."""
-#    form = LoginForm(request.form)
-#    if request.method == 'POST' and form.validate():
-#        user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
-#        return redirect(url_for('goals'))
-#    return render_template('login.html', form=form)
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """For GET requests, display login form, for POSTS, login the user by processing data."""
+    form = LoginForm(request.form)
+    if request.method == 'POST' and form.validate():
+        registered_user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
+        if registered_user:
+            return redirect(url_for('goals'))
+        else:
+            flash('Username or password is invalid')
+    return render_template('login.html', form=form)
 
 @app.route('/goals')
 def goals():

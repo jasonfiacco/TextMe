@@ -28,7 +28,7 @@ class User(db.Model):
 
     def is_authenticated(self):
         """Return True if user is authenticated."""
-        return self.authenticated
+        return True
 
     def is_anonymous(self):
         """Anonymous users aren't supported."""
