@@ -25,11 +25,14 @@ def user_loader(user_id):
 def register():
     form = RegistrationForm(request.form)
     if request.method == 'POST' and form.validate():
-        new_user = User(form.username.data, form.password.data)
-        db.session.add(new_user)
-        db.session.commit()
-        flash('User successfully registered')
-        return redirect(url_for('goals'))
+        if not User.query.filter_by(username=form.username.data).first():
+            new_user = User(form.username.data, form.password.data)
+            db.session.add(new_user)
+            db.session.commit()
+            flash('User successfully registered')
+            return redirect(url_for('goals'))
+        else:
+            flash('User already exists')
     return render_template('register.html', form=form)
 
 #@app.route('/login', methods=['GET', 'POST'])
